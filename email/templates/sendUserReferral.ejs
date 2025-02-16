@@ -1,0 +1,170 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css" nonce="">
+        body,
+        td,
+        div,
+        p,
+        a,
+        input {
+            font-family: arial, sans-serif;
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <style type="text/css" nonce="">
+        body,
+        td {
+            font-size: 13px;
+        }
+
+        a:link,
+        a:active {
+            color: #1155cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        a:visited {
+            color: #6611cc;
+        }
+
+        img {
+            border: 0px;
+        }
+
+        pre {
+            white-space: pre;
+            white-space: -moz-pre-wrap;
+            white-space: -o-pre-wrap;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-width: 800px;
+            overflow: auto;
+        }
+
+        .logo {
+            left: -7px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bodycontainer">
+        <div class="maincontent">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="message">
+                <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <table width="100%" cellpadding="12" cellspacing="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div style="overflow: hidden;">
+                                                <font size="-1">
+                                                    <u></u>
+                                                    <div width="100%"
+                                                        style="margin: 0; padding: 0 !important; background-color: #f5f6fa;">
+                                                        <center style="width: 100%; background-color: #f5f6fa;">
+                                                            <table width="100%" border="0" cellpadding="0"
+                                                                cellspacing="0" bgcolor="#f5f6fa">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="padding: 40px 0;">
+                                                                            <table
+                                                                                style="width: 100%; max-width: 620px; margin: 0 auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td
+                                                                                            style="text-align: center; padding-bottom: 25px;">
+                                                                                            <a href="<%=website_url%>"
+                                                                                                target="_blank">
+                                                                                                <img style="height: 40px; width: auto;"
+                                                                                                    src="<%=website_url%><%=website_logo%>"
+                                                                                                    alt="logo" />
+                                                                                            </a>
+
+                                                                                            <p
+                                                                                                style="font-size: 14px; color: #3489eb; padding-top: 12px; text-transform: capitalize;">
+                                                                                                <%=website_title%>
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <table
+                                                                                style="width: 100%; max-width: 620px; margin: 0 auto; background-color: #ffffff;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td
+                                                                                            style="padding: 30px 30px 20px;">
+                                                                                            <p
+                                                                                                style="margin-bottom: 10px;text-transform: capitalize;">
+                                                                                                Hi <%=ref1Obj.fullname%>,
+                                                                                            </p>
+                                                                                            <p
+                                                                                                style="margin-bottom: 10px;">
+                                                                                                You have a new direct
+                                                                                                signup.<br />
+                                                                                                <br />
+                                                                                                User: <%=ref2Obj.username%> <br />
+                                                                                                Name: <%=ref2Obj.fullname%>
+                                                                                                <br />
+                                                                                                E-mail: <a
+                                                                                                    href="mailto:<%=ref2Obj.email%>"
+                                                                                                    target="_blank"><%=ref2Obj.email%></a>
+                                                                                            </p>
+                                                                                            <br />
+                                                                                            <p
+                                                                                                style="margin-bottom: 15px;">
+                                                                                                Hope you'll enjoy the experience, we're here if you have any questions, reply this mail anytime
+                                                                                                or
+                                                                                                contact the live support team on the website.
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <table
+                                                                                style="width: 100%; max-width: 620px; margin: 0 auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td
+                                                                                            style="text-align: center; padding: 25px 20px 0;">
+                                                                                            <p style="font-size: 13px;">
+                                                                                                Copyright © <script>document.write(new Date().getFullYear())</script>
+                                                                                                <%=website_title%>. All rights
+                                                                                                reserved.
+                                                                                            </p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </center>
+                                                    </div>
+                                                </font>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

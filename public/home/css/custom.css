@@ -1,0 +1,30 @@
+.social {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social li {
+    margin: 0;
+    padding: 0;
+}
+
+.social li a .bx {
+    font-size: 28px;
+    padding: 0;
+    margin: 0;
+}
+
+.social li a .bx.facebook{
+    color: #3b5998 
+}
+.social li a .bx.twitter{
+    color: #00acee  
+}
+.social li a .bx.instagram{
+    color: #8a3ab9 
+}
+.social li a .bx.youtube{
+    color: #c4302b 
+}
