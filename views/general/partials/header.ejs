@@ -3,7 +3,10 @@
 <head>
 
     <meta charset="utf-8">
-    <title><%=title%> - <%=websiteDetails.website_tagline%></title>
+    <title>
+        <%=title%> -
+            <%=websiteDetails.website_tagline%>
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="<%=websiteDetails.website_description%>" name="description">
     <meta content="<%=websiteDetails.website_author%>" name="author">
@@ -13,24 +16,24 @@
 
     <%-websiteDetails.website_header_code%>
 
-    <!-- owl.carousel css -->
-    <link rel="stylesheet" href="/user/libs/owl.carousel/assets/owl.carousel.min.css">
+        <!-- owl.carousel css -->
+        <link rel="stylesheet" href="/user/libs/owl.carousel/assets/owl.carousel.min.css">
 
-    <link rel="stylesheet" href="/user/libs/owl.carousel/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="/user/libs/owl.carousel/assets/owl.theme.default.min.css">
 
-    <!-- Bootstrap Css -->
-    <link href="/user/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css">
-    <!-- Icons Css -->
-    <link href="/user/css/icons.min.css" rel="stylesheet" type="text/css">
-    <!-- App Css-->
-    <link href="/user/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
-    <link href="/home/css/custom.css" rel="stylesheet" type="text/css">
+        <!-- Bootstrap Css -->
+        <link href="/user/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css">
+        <!-- Icons Css -->
+        <link href="/user/css/icons.min.css" rel="stylesheet" type="text/css">
+        <!-- App Css-->
+        <link href="/user/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
+        <link href="/home/css/custom.css" rel="stylesheet" type="text/css">
 
-    <style>
-        body {
-            overflow-x: hidden !important;
-        }
-    </style>
+        <style>
+            body {
+                overflow-x: hidden !important;
+            }
+        </style>
 
 </head>
 
@@ -43,8 +46,7 @@
                 <img src="<%=websiteDetails.website_logo%>" alt="" class="logo logo-light" height="19">
             </a>
 
-            <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light"
-                data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+            <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
 
@@ -59,22 +61,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/page/how-it-works">Learn More</a>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="nav-link" href="/blog">Articles</a>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="nav-link" href="/checker">Bypluse Checker</a>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="nav-link" href="/page/exchanger">Merchant</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact-us">Contact Us</a>
                     </li>
-                    
+
 
                 </ul>
 
@@ -82,12 +84,22 @@
                     <%if(user){%>
                         <a href="<%=user.role ? '/admin/dashboard' : '/user/dashboard'%>" class="btn btn-outline-success w-xs">Dashboard</a>
                         <a href="<%=user.role ? '/logout?route=admin' : '/logout'%>" class="btn btn-outline-danger w-xs">Logout</a>
-                    <%}else{%>
-                    <a href="/login" class="btn btn-outline-success w-xs">Login</a>
-                    <a href="/register" class="btn btn-outline-primary w-xs">Register</a>
-                    <%}%>
-                    
+                        <%}else{%>
+                            <a href="/login" class="btn btn-outline-success w-xs">Login</a>
+                            <a href="/register" class="btn btn-outline-primary w-xs">Register</a>
+                            <%}%>
+
                 </div>
             </div>
+
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="selectedLanguage">Select Language</span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item" href="#" onclick="changeLanguage('English')">English</a></li>
+                <li><a class="dropdown-item" href="#" onclick="changeLanguage('Français')">Français</a></li>
+            </ul>
         </div>
     </nav>
