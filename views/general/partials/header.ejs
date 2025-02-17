@@ -28,6 +28,7 @@
         <!-- App Css-->
         <link href="/user/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
         <link href="/home/css/custom.css" rel="stylesheet" type="text/css">
+        <script src="/home/js/translate.js"></script>
 
         <style>
             body {
@@ -90,16 +91,15 @@
                             <%}%>
 
                 </div>
+                <div class="dropdown st">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span id="selectedLanguage">Select Language</span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="changeLanguage('fr')">Français</a></li>
+                    </ul>
+                </div>
             </div>
-
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                <span id="selectedLanguage">Select Language</span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                <li><a class="dropdown-item" href="#" onclick="changeLanguage('English')">English</a></li>
-                <li><a class="dropdown-item" href="#" onclick="changeLanguage('Français')">Français</a></li>
-            </ul>
         </div>
     </nav>
