@@ -1,0 +1,179 @@
+<div class="modal fade" id="new-wal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <strong class="modal-title method-name" id="exampleModalLabel">Your New Wallet Almost Ready</strong>
+                <a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <h4 class="text-center mb-4">Please follow the instruction below</h4>
+                            <br>
+                            <p class="text-center mt-2">Creating a new wallet takes nothing than 30 seconds, just select preferred wallet you wish to create, input necessary details. <br>Then submit it.</p>
+
+
+
+                        </div>
+
+                        <ul class="nav nav-pills nav-justified" role="tablist">
+                            <li class="nav-item waves-effect waves-light">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#mobile" role="tab" aria-selected="true">
+                                    <span>Mobile Money</span>
+                                </a>
+                            </li>
+                            <!--
+                            <li class="nav-item waves-effect waves-light">
+                                <a class="nav-link" data-bs-toggle="tab" href="#bank" role="tab" aria-selected="false">
+                                    <span>Bank</span>
+                                </a>
+                            </li>
+                            -->
+                            <li class="nav-item waves-effect waves-light">
+                                <a class="nav-link" data-bs-toggle="tab" href="#crypto" role="tab" aria-selected="false">
+                                    <span>Crypto</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                        <div class="tab-content p-3 text-muted">
+                            <div class="tab-pane active" id="mobile" role="tabpanel">
+                                <form class="form" id="mobile">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4">
+                                            <label for="fullname" class="font-weight-bold"> Fullname</label>
+
+                                            <input id="fullname" type="text" class="form-control form-control-lg" required placeholder="Enter Fullname">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4">
+                                            <label for="phone" class="font-weight-bold"> Phone Number</label>
+
+                                            <input id="phone" type="text" class="form-control form-control-lg" required placeholder="Enter Phone Number">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 d-flex justify-content-end">
+                                        <div class="form-group mt-4">
+                                            <button type="button" class="btn btn-danger  ml-auto" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" id="submit" class="btn btn-primary">Create</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                            <!--
+                             <div class="tab-pane" id="bank" role="tabpanel">
+                                <form class="form" id="bank">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4">
+                                            <label for="number" class="font-weight-bold"> Bank Account Number</label>
+
+                                            <input id="number" type="text" class="form-control form-control-lg" required placeholder="Enter Bank Account Number">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4">
+                                            <label for="name" class="font-weight-bold"> Bank Account Name</label>
+
+                                            <input id="name" type="text" class="form-control form-control-lg" required placeholder="Enter Bank Account Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4">
+                                            <label for="bankName" class="font-weight-bold"> Bank Name</label>
+
+                                            <input id="bankName" type="text" class="form-control form-control-lg" required placeholder="Enter Bank Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4">
+                                            <label for="type" class="font-weight-bold"> Bank Account Type</label>
+
+                                            <input id="type" type="text" class="form-control form-control-lg" required placeholder="Enter Bank Account Type">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 d-flex justify-content-end">
+                                        <div class="form-group mt-4">
+                                            <button type="button" class="btn btn-danger  ml-auto" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" id="submit" class="btn btn-primary">Create</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            -->
+
+                            <div class="tab-pane" id="crypto" role="tabpanel">
+                                <form class="form" id="crypto">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4">
+                                            <label for="coiname" class="font-weight-bold"> USDT Name</label>
+
+                                            <input id="coiname" type="text" class="form-control form-control-lg" required placeholder="Solana">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4">
+                                            <label for="address" class="font-weight-bold"> USDT Address</label>
+
+                                            <input id="address" type="text" class="form-control form-control-lg" required placeholder="2zAbHUpE4MRgEwq1MWh3i9aJyzazSjUUPrmhNViqQn5W">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4">
+                                            <label for="network" class="font-weight-bold">Usdt Network</label>
+
+                                            <input id="network" type="text" class="form-control form-control-lg" required placeholder="TRC20">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4">
+                                            <label for="memo" class="font-weight-bold">USDT Memo</label>
+
+                                            <input id="memo" type="text" class="form-control form-control-lg" placeholder="Memo (Optional)">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 d-flex justify-content-end">
+                                        <div class="form-group mt-4">
+                                            <button type="button" class="btn btn-danger  ml-auto" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" id="submit" class="btn btn-primary">Create</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

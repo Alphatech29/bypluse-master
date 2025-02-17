@@ -1,0 +1,123 @@
+<%-include("./header")%>
+<!-- Start Bottom Header -->
+<div class="page-area">
+   <div class="breadcumb-overlay"></div>
+   <div class="container">
+       <div class="row">
+           <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="breadcrumb text-center">
+                   <div class="section-headline">
+                       <h2><%=title%></h2>
+                   </div>
+                   <ul>
+                       <li class="home-bread">Home</li>
+                       <li><%=title%></li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- END Header -->
+<!-- Start Blog area -->
+<div class="blog-area bg-color area-padding">
+   <div class="container">
+       
+       <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12">
+            <!-- single-blog start -->
+            <article class="blog-post-wrapper">
+                <div class="blog-banner">
+                    <%if(post.post_image){%>
+                        <a href="#" class="blog-images">
+                            <img src="<%=post.post_image%>" alt="">
+                        </a>
+                    <%}%>
+                    
+                    <div class="blog-content">
+                        <h4><%=post.post_title%></h4>
+                        <div class="blog-meta pb-5 mt-5">
+                            <span class="admin-type text-capitalize">
+                                <i class="fa fa-user"></i>
+                                <%=post.username%>
+                            </span>
+                            <span class="date-type">
+                               <i class="fa fa-calendar"></i>
+                                <%=post.post_created_at%>
+                            </span>
+                            <span class="comments-type">
+                                <i class="fa fa-eye"></i>
+                                <%=post.post_views2%>
+                            </span>
+                            <span class="comments-type">
+                                <i class="fa fa-usd"></i>
+                                <%=post.post_earnable ? 'Earnable' : 'Not Earnable'%>
+                            </span>
+                        </div>
+
+                        <div style="padding-bottom: 10px;">
+                            <%-post.post_description%>
+                        </div>
+                        
+                    </div>
+                </div>
+            </article>
+            <div class="clear"></div>
+           
+            <!-- single-blog end -->
+        </div>
+           
+           <div class="col-md-4 col-sm-4 col-xs-12">
+               <div class="left-head-blog right-side">
+                   <div class="left-blog-page">
+                       <!-- search option start -->
+                       <form action="/blog">
+                           <div class="blog-search-option">
+                               <input name="search" type="search" required placeholder="Search...">
+                               <button class="button" type="submit">
+                                   <i class="fa fa-search"></i>
+                               </button>
+                           </div>
+                       </form>
+                       <!-- search option end -->
+                   </div>
+                   
+                   <div class="left-blog-page">
+                       <!-- recent start -->
+                       <div class="left-blog">
+                           <h4>recent post</h4>
+                           <div class="recent-post">
+                               <%popular.map(pt =>{%>
+                                   <!-- start single post -->
+                                   <div class="recent-single-post">
+                                       <div class="post-img">
+                                           <a href="/blog/<%=pt.post_slug%>">
+                                               <img src="<%=pt.post_image ? pt.post_image : '/general//blog/img/thumbnail.png'%>" alt="">
+                                           </a>
+                                       </div>
+                                       <div class="pst-content">
+                                           <p><a href="/blog/<%=pt.post_slug%>"><%=pt.post_title%></a></p>
+                                           <span class="date-type">
+                                               <%=pt.post_created_at%>
+                                           </span>
+                                       </div>
+                                   </div>
+                                   <!-- End single post -->
+                               <%})%>
+                               
+
+                               
+                           </div>
+                       </div>
+                       <!-- recent end -->
+                   </div>
+                   
+               </div>
+           </div>
+
+       </div>
+       <!-- End row -->
+   </div>
+</div>
+<!-- End Blog area -->
+<%-include("./footer")%>

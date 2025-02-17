@@ -1,0 +1,125 @@
+<%-include("./partials/header")%>
+                    
+<div class="card overflow-hidden">
+    <div class="bg-primary bg-soft">
+        <div class="row">
+            <div class="col-7">
+                <div class="text-primary p-4">
+                    <h5 class="text-primary">Premium Register</h5>
+                    <p>Get your premium <%=websiteDetails.website_title %> account now.</p>
+                </div>
+            </div>
+            <div class="col-5 align-self-end">
+                <img src="/user/images/profile-img.png" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="card-body pt-0">
+        <div>
+            <a href="/">
+                <div class="avatar-md profile-user-wid mb-4">
+                    <span class="avatar-title rounded-circle bg-light">
+                        <img src="<%=websiteDetails.website_favicon %>" alt="" class="rounded-circle" height="34">
+                    </span>
+                </div>
+            </a>
+        </div>
+        <div class="p-2">
+            <form id="register" class="needs-validation">
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
+                    
+                </div>
+                
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Fullname</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Enter Fullname" required>
+                    
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email"
+                    placeholder="Enter E-mail" required>
+                    <p class="card-title-desc">Provide a valid E-mail for account verification. </p>
+                    
+                </div>
+                
+                
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Mobile Number</label>
+                    <input type="text" class="form-control" id="phone"
+                    placeholder="Enter Mobile Number" required>
+                    
+                </div>
+                
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input minlength="6" maxlength="20" type="password" class="form-control" id="password" placeholder="Enter Password" required>
+                    
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password2" class="form-label">Password</label>
+                    <input minlength="6" maxlength="20" type="password" class="form-control" id="password2" placeholder="Confirm Password" required>
+                    
+                </div>
+                
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <select id="country" required class="form-select">
+                        <option>Select Country</option>
+                        <%countries.map(ct =>{%>
+                            <option value="<%=ct.name%>"><%=ct.name%></option>
+                        <%})%>
+                    </select>
+                    
+                </div>
+                
+                <div class="mb-3">
+                    <label for="upline" class="form-label">Upline Username</label>
+                    <input type="text" class="form-control" id="upline" placeholder="Enter Upline Username (Optional)" value="<%=referrer ? (referrer.username).toUpperCase() : ''%>">
+                    <%if(referrer){%>
+                        <p class="card-title-desc">You Were Referred By <strong class="text-capitalize"><%=referrer.username%></strong>. </p>
+                    <%}%>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="remember-check">
+                    <label class="form-check-label" for="remember-check">
+                        <p class="mb-0">By registering you agree to the <%=websiteDetails.website_title %> <a href="/page/terms-of-services" class="text-primary">Terms of Use</a></p>
+                    </label>
+                </div>
+                
+            
+                <div class="mt-4 d-grid">
+                    <button id="submit" class="btn btn-primary waves-effect waves-light"
+                        type="submit">Register</button>
+                </div>
+
+                
+                
+                
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<div class="mt-5 text-center">
+
+    <div>
+        <p>Already have an account ? <a href="/login" class="fw-medium text-primary">
+                Login</a> </p>
+        <p>©
+            <script>document.write(new Date().getFullYear())</script> <%=websiteDetails.website_title %>. Designed with <i
+                class="mdi mdi-heart text-danger"></i> by <a href="<%=websiteDetails.website_dev_link %>"><%=websiteDetails.website_dev_name %></a>
+        </p>
+    </div>
+</div>
+
+<script src="/user/js/auth/register.js"></script>
+<%-include("./partials/footer")%>

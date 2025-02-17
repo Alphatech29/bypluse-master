@@ -1,0 +1,51 @@
+    <div class="col-12 grid-margin mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Last 10 Referrals</h4>
+
+                <%if(referralHistory.length){%>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                
+                                <th> User </th>
+                                <th> Date </th>
+                                <th> Status </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%referralHistory.map((rh,index)=>{%>
+
+                            <tr>
+                                <td>
+                                    <img src="<%=rh.avatar ? rh.avatar:'/img/avatar/avatar.jpg' %>" class="mr-2" alt="image"> <%=rh.fullname%>
+                                </td>
+                                <td> <%=rh.created_at%> </td>
+                                <td>
+                                    <%if(rh.r_status){%>
+                                    <label class="badge badge-gradient-success">Verified</label>
+                                    <%}else{%>
+                                    <label class="badge badge-gradient-danger">Unverified</label>
+                                    <%}%>
+                                </td>
+                                
+                            </tr>
+
+                            <%})%>
+
+                            
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-center">
+                        <a href="/user/history/referral" class="btn btn-sm bg-gradient-primary mt-4 d-flex">View More</a>
+                    
+                    </div>
+                </div>
+                <%}else{%>
+                <h6 class="text-center pt-3">No Referral Stats At The Moment</h6>
+                <%}%>
+            </div>
+        </div>
+    </div>

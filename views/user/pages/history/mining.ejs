@@ -1,0 +1,85 @@
+<%-include("../../partials/header")%>
+
+<div class="col-12 grid-margin mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Mining History</h4>
+    
+                <%if(history.length){%>
+                    <div class="table-responsive">
+                        <table id="mytable" class="table">
+                            <thead>
+                                <tr>
+                    
+                                    <th> # </th>
+                                    <th> Start </th>
+                                    <th> End </th>
+                                    <th> Amount </th>
+                                    <th> Balance </th>
+                                    <th> Description </th>
+                                    <th> Status </th>
+                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%history.map((eh,index)=>{%>
+                    
+                                    <tr>
+                                        <td>
+                                            <%=index + 1%>
+                                        </td>
+                    
+                                        <td>
+                                            <%=eh.m_start_time%>
+                                        </td>
+                                        
+                                        <td>
+                                            <%=eh.m_end_time%>
+                                        </td>
+                    
+                                        <td> <span class="text-xs font-weight-bold">
+                                                <%=websiteDetails.website_currency%><%=(eh.m_amount * websiteDetails.website_per_coin).toLocaleString()%> </span>
+                                                </td>
+                                        <td> <span class="text-xs font-weight-bold">
+                                                <%=websiteDetails.website_currency%><%=(eh.m_balance * websiteDetails.website_per_coin).toLocaleString()%> </span>
+                                                </td>
+                    
+                                        <td>
+                                            <%=eh.m_text%>
+                                        </td>
+
+                                        <td>
+                                            <%if(eh.m_status){%>
+                                            <button type="button" class="btn btn-success waves-effect waves-light nothingbtn">
+                                                <i class="bx bx-check-double font-size-16 align-middle me-2"></i> Completed
+                                            </button>
+                                            <%}else{%>
+                                            <button type="button" class="btn btn-dark waves-effect waves-light nothingbtn">
+                                                <i class="bx bx-loader bx-spin font-size-16 align-middle me-2"></i> In Progress
+                                            </button>
+                                            <%}%>
+                                        </td>
+                    
+                                    </tr>
+                    
+                                    <%})%>
+                    
+                    
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-center">
+                            <%-include("../../partials/pagination")%>
+                    
+                        </div>
+                    </div>
+                    <%}else{%>
+                        <h6 class="text-center pt-3">No Mining Stats At The Moment</h6>
+                        <%}%>
+    
+    
+            </div>
+        </div>
+    </div>
+
+
+<%-include("../../partials/footer")%>

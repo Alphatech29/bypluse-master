@@ -1,0 +1,128 @@
+@media (max-width:991px) {
+    .navbar-brand-box {
+    padding: 20px !important;
+}
+}
+
+#paymentBox .mdi{
+    font-size: 2.5rem;
+}
+
+#paymentBox img{
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+}
+
+table#mytable{
+    font-size: 13px !important;
+}
+
+img.miner-img{
+    width: 72px;
+height: 72px;
+object-fit: cover;
+}
+
+.mine-engine {
+    cursor: pointer;
+    color: rgba(152, 152, 152, 0.43);
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: none;
+        border-bottom-color: currentcolor;
+        border-bottom-style: none;
+        border-bottom-width: medium;
+    font-size: 4rem;
+    font-weight: bold;
+    background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: 2px solid #b5b5b5;
+    margin-bottom: 2rem;
+}
+
+.mine-engine i.bx{
+    font-size: 6rem
+}
+
+.timer span {
+    font-size: 1.5rem;
+}
+
+.mine-balance span {
+    font-size: 1rem;
+}
+.timer button,.mine-balance button{
+    pointer-events: none;
+}
+
+.rewardn {
+    font-size: 13px !important;
+}
+
+ @keyframes pulse {
+    0% {
+        transform: scale(1);
+      box-shadow: 0 0 0 0 rgb(85, 110, 230,0.44);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 50px rgb(178, 153, 27, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgb(178, 153, 27, 0);
+    }
+  }
+  
+.mine-wrapper .pulse {
+    animation: pulse 2s infinite;
+}
+
+body[data-sidebar="dark"].mine-active #mine h4 {
+    color: #000 !important;
+}
+
+body[data-sidebar=""].mine-active #mine h4 {
+    color: #fff !important;
+}
+
+.mine-active .mine-wrapper,button.nothingbtn{
+    pointer-events: none;
+}
+
+img.blogCard{
+    width: 100%;
+    height: 274px;
+    object-fit: cover;
+}
+
+img.popularCard{
+    width: 72px !important;
+    height: 47px !important;
+    object-fit: cover;
+}
+
+.btn-facebook{
+    background: #3b5998 ;
+    color:#fff;
+    font-size: 25px;
+}
+
+.btn-whatsapp{
+    background: #25D366 ;
+    color:#fff;
+    font-size: 25px;
+}
+
+.btn-twitter{
+    background: #1DA1F2 ;
+    color:#fff;
+    font-size: 25px;
+}
+
+.rewardnn {
+    font-size: 12px;
+}

@@ -1,0 +1,263 @@
+<%-include("../partials/header")%>
+
+    <!-- hero section start -->
+    <section class="section hero-section bg-ico-hero" id="home">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="  w-75">
+                    <div class="text-white-50 justify-content-center items-center ">
+                        <h1 class="text-white fw-semibold mb-3 hero-title">
+                            <%=websiteDetails.website_title%> -
+                                <%=websiteDetails.website_tagline%>
+                        </h1>
+                        <p class="font-size-17">
+                            <%=websiteDetails.website_description%>
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+                            <a href="/page/how-it-works" class="btn btn-success">Learn More</a>
+                            <a href="/register" class="btn btn-light">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- hero section end -->
+
+    <!-- currency price section start -->
+    <section class="section bg-white p-0">
+        <div class="container">
+            <div class="currency-price">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="avatar-xs">
+                                            <span class="avatar-title rounded-circle bg-warning bg-soft text-warning font-size-18">
+                                                <i class="mdi mdi-account-multiple"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted">Users</p>
+                                        <h5>
+                                            <%=totalUsers%>
+                                        </h5>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="avatar-xs">
+                                            <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-18">
+                                                <i class="mdi mdi-cash-multiple"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted">Total Withdrawal</p>
+                                        <h5>
+                                            <%=websiteDetails.website_currency + (totalWithdrawal.toLocaleString())%>
+                                        </h5>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="avatar-xs">
+                                            <span class="avatar-title rounded-circle bg-info bg-soft text-info font-size-18">
+                                                <i class="mdi mdi-axe"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <p class="text-muted">Live Miners</p>
+                                        <h5>
+                                            <%=liveMiners%>
+                                        </h5>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- currency price section end -->
+
+    <!-- about section start -->
+    <section class="section pt-4 bg-white" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mb-5">
+
+                        <h4>How It Works?</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+
+                    <div class="text-muted">
+                        <h4>
+                            <%=websiteDetails.website_tagline%>
+                        </h4>
+                        <p>Making money online with "stress free" is what we offer.</p>
+                        <p>With just a smartphone and internet access you can be making tons of direct income.</p>
+
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="/page/how-it-works" class="btn btn-success">Read More</a>
+                            <a href="/register" class="btn btn-outline-primary">Get Started</a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 ms-auto">
+                    <div class="mt-4 mt-lg-0">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card border">
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <i class="mdi mdi-bitcoin h2 text-success"></i>
+                                        </div>
+                                        <h5>Mining virtual Crypto</h5>
+                                        <p class="text-muted mb-0">Just click on the mining button and minimize your phone,
+                                            <%=websiteDetails.website_title%> will be mining in the background for you.</p>
+
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top text-center">
+                                        <a href="/user/dashboard" class="text-primary">Start The Engine</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card border mt-lg-5">
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <i class="mdi mdi-wallet-outline h2 text-success"></i>
+                                        </div>
+                                        <h5>Wallet</h5>
+                                        <p class="text-muted mb-0">
+                                            <%=websiteDetails.website_title%> offer multiple ways to withdraw your mining rewards, you can withdraw to your Mobile Bank, Local Bank Or through BNB & USTD.</p>
+
+                                    </div>
+                                    <div class="card-footer bg-transparent border-top text-center">
+                                        <a href="/user/withdrawal" class="text-primary">Make Withdrawal</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- about section end -->
+
+    <!-- Features start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mb-5">
+                        <div class="small-title">Get Started</div>
+                        <h4>Start The Mining Process In Just 3 Steps</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row align-items-center pt-4">
+                <div class="col-md-6 col-sm-8">
+                    <div>
+                        <img src="/user/images/verification-img.png" alt="" class="img-fluid mx-auto d-block">
+                    </div>
+                </div>
+                <div class="col-md-5 ms-auto">
+                    <div class="mt-4 mt-md-auto">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="features-number fw-semibold display-4 me-3">01</div>
+                            <h4 class="mb-0">Register</h4>
+                        </div>
+                        <p class="text-muted">As a new miner, you need to have a verified account, visit the registration panel to register and verify your account.</p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row align-items-center mt-5 pt-md-5">
+                <div class="col-md-5">
+                    <div class="mt-4 mt-md-0">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="features-number fw-semibold display-4 me-3">02</div>
+                            <h4 class="mb-0">Subscribe To A Plan</h4>
+                        </div>
+                        <p class="text-muted">After registration, you will be prompt to subscribe to a plan, using one-time lifetime payment.</p>
+                        <p class="text-muted">Make payment using either Opay,Crypto Or BartaPay-pin.</p>
+
+                    </div>
+                </div>
+                <div class="col-md-6  col-sm-8 ms-md-auto">
+                    <div class="mt-4 me-md-0">
+                        <img src="/home/img/step2.png" alt="" class="img-fluid mx-auto d-block">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row align-items-center pt-4">
+                <div class="col-md-6 col-sm-8">
+                    <div>
+                        <img src="/user/images/profile-img.png" alt="" class="img-fluid mx-auto d-block">
+                    </div>
+                </div>
+                <div class="col-md-5 ms-auto">
+                    <div class="mt-4 mt-md-auto">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="features-number fw-semibold display-4 me-3">03</div>
+                            <h4 class="mb-0">Active Mining Engine</h4>
+                        </div>
+                        <p class="text-muted">On your dashboard, Mining Engine have been setup, Stamp on the start button and let us mine for you in the background.</p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- Features end -->
+
+
+
+    <%-include("../partials/footer")%>

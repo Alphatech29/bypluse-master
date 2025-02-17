@@ -1,0 +1,141 @@
+<div id="wallet-<%=h.w_wid%>" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Wallet Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <%if(h.w_type){%>
+                <div class="row ">
+            <div class="col-12">
+                
+                <div class="card-wrapper">
+            <!-- Form controls -->
+            <div class="card">
+              
+              <!-- Card body -->
+              <div class="card-body">
+                <%if(h.w_type === "mobile"){%>
+                  <form class="form" id="mobile">
+                  
+                    <div class="col-md-12">
+                      <div class="form-group mt-4">
+                        <label for="fullname" class="font-weight-bold"> Fullname</label>
+                  
+                        <input id="fullname" type="text" class="form-control form-control-lg" required placeholder="Enter Fullname" value="<%=h.w_fullname%>">
+                      </div>
+                    </div>
+                  
+                    <div class="col-md-12">
+                      <div class="form-group mt-4">
+                        <label for="phone" class="font-weight-bold"> Phone Number</label>
+                  
+                        <input id="phone" type="text" class="form-control form-control-lg" required placeholder="Enter Phone Number" value="<%=h.w_phone_number%>">
+                      </div>
+                    </div>
+                  
+                    
+                  
+                  </form>
+                <%}else if(h.w_type === "bank"){%>
+                  <form class="form" id="bank">
+                  
+                    <div class="col-md-12">
+                      <div class="form-group mt-4">
+                        <label for="number" class="font-weight-bold"> Bank Account Number</label>
+                  
+                        <input id="number" type="text" class="form-control form-control-lg" required
+                          placeholder="Enter Bank Account Number" value="<%=h.w_account_number%>">
+                      </div>
+                    </div>
+                  
+                    <div class="col-md-12">
+                      <div class="form-group mt-4">
+                        <label for="name" class="font-weight-bold"> Bank Account Name</label>
+                  
+                        <input id="name" type="text" class="form-control form-control-lg" required placeholder="Enter Bank Account Name" value="<%=h.w_account_name%>">
+                      </div>
+                    </div>
+                  
+                    <div class="col-md-12">
+                      <div class="form-group mt-4">
+                        <label for="bankName" class="font-weight-bold"> Bank Name</label>
+                  
+                        <input id="bankName" type="text" class="form-control form-control-lg" required placeholder="Enter Bank Name" value="<%=h.w_account_bank_name%>">
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="form-group mt-4">
+                        <label for="type" class="font-weight-bold"> Bank Account Type</label>
+                  
+                        <input id="type" type="text" class="form-control form-control-lg" required placeholder="Enter Bank Account Type" value="<%=h.w_account_bank_type%>">
+                      </div>
+                    </div>
+                  
+                    
+                  
+                  </form>
+                <%}else{%>
+                  <form class="form" id="crypto">
+                  
+                    <div class="col-md-12">
+                      <div class="form-group mt-4">
+                        <label for="coiname" class="font-weight-bold"> Coin Name</label>
+                  
+                        <input id="coiname" type="text" class="form-control form-control-lg" required placeholder="Solana" value="<%=h.w_coin_name%>">
+                      </div>
+                    </div>
+                  
+                    <div class="col-md-12">
+                      <div class="form-group mt-4">
+                        <label for="address" class="font-weight-bold"> Coin Address</label>
+                  
+                        <input id="address" type="text" class="form-control form-control-lg" required
+                          placeholder="2zAbHUpE4MRgEwq1MWh3i9aJyzazSjUUPrmhNViqQn5W" value="<%=h.w_coin_address%>">
+                      </div>
+                    </div>
+                  
+                    <div class="col-md-12">
+                      <div class="form-group mt-4">
+                        <label for="network" class="font-weight-bold"> Coin Network</label>
+                  
+                        <input id="network" type="text" class="form-control form-control-lg" required placeholder="BEP20" value="<%=h.w_coin_network%>">
+                      </div>
+                    </div>
+                  
+                    <div class="col-md-12">
+                      <div class="form-group mt-4">
+                        <label for="memo" class="font-weight-bold"> Coin Memo</label>
+                  
+                        <input id="memo" type="text" class="form-control form-control-lg" placeholder="Memo (Optional)" value="<%=h.w_coin_memo%>">
+                      </div>
+                    </div>
+                  
+                    
+                  
+                  </form>
+                <%}%>
+              </div>
+            </div>
+            
+          </div>
+
+
+            </div>
+        </div>
+                <%}else{%>
+                <h6><%=h.username%> Has No Wallet</h6>
+                <%}%>
+                
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal"> Close </button>
+            </div>
+        </div>
+    </div>
+</div>

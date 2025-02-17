@@ -1,0 +1,59 @@
+<%-include("../partials/header")%>
+
+
+<!-- Roadmap start -->
+    <section class="section bg-white" id="roadmap">
+        <div class="container">
+            <div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="text-center mb-5">
+            <h4>Choose your Subscription plan</h4>
+            <p class="text-muted">Subscribe to a preferred plan To unlock more Beneficial features.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    
+    <%packages.map(pk =>{%>
+        <%const time = pk.plan_mining_minute >= 60 ? (Math.round(pk.plan_mining_minute / 60) + ' Hour' ):(pk.plan_mining_minute + " Minute")%>
+        <div class="col-xl-3 col-md-6">
+            <div class="card plan-box">
+                <div class="card-body p-4">
+                    <div class="d-flex">
+                        <div class="flex-grow-1">
+                            <h5><%=pk.plan_name%></h5>
+                            <p class="text-muted">Mine <strong><%=pk.plan_mining_amount%> BAT</strong> Every  <strong><%=time%></strong></p>
+                        </div>
+                        <div class="flex-shrink-0 ms-3">
+                            <i class="bx bx-cube-alt h1 text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        <h2 class="text-center"><sup><small>$</small></sup><%=pk.plan_price.toLocaleString()%><!-- / <span class="font-size-13"><%=pk.plan_duration + (pk.plan_duration > 1 ? ' Days' : ' Day')%> </span> -->
+                        </h2>
+                    </div>
+                    <div class="text-center plan-btn">
+                        <a id="subscribeBtn" data-id="<%=pk.plan_id%>" href="/user/packages" class="btn btn-primary btn-sm waves-effect waves-light">Subscribe Now</a>
+                    </div>
+        
+                    <div class="plan-features mt-5">
+                        <p><i class="bx bx-checkbox-square text-primary me-2"></i> Mining Amount: <strong><%=pk.plan_mining_amount%> BAT</strong></p>
+                        <p><i class="bx bx-checkbox-square text-primary me-2"></i> Mining Frequency: Every <strong><%=time%></strong></p>
+                        <!-- <p><i class="bx bx-checkbox-square text-primary me-2"></i> Mining Duration: <strong><%=pk.plan_duration + (pk.plan_duration> 1 ? ' Days' : ' Day')%></strong></p> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    <%})%>
+    
+</div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+    <!-- Roadmap end -->
+    
+    
+<%-include("../partials/footer")%>    

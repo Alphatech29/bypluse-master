@@ -1,0 +1,114 @@
+<!-- ========== Left Sidebar Start ========== -->
+<div class="vertical-menu">
+  <div data-simplebar="init" class="h-100">
+    <div class="simplebar-wrapper" style="margin: 0px;">
+      <div class="simplebar-height-auto-observer-wrapper">
+        <div class="simplebar-height-auto-observer"></div>
+      </div>
+      <div class="simplebar-mask">
+        <div class="simplebar-offset" style="right: -17px; bottom: 0px;">
+          <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;">
+            <div class="simplebar-content" style="padding: 0px;">
+              <!--- Sidemenu -->
+              <div id="sidebar-menu" class="mm-active">
+                <!-- Left Menu Start -->
+                <ul class="metismenu list-unstyled mm-show" id="side-menu">
+                  <li class="menu-title" key="t-menu">Dahboard</li>
+
+                  <li>
+                    <a href="/user/dashboard" class="waves-effect">
+                      <i class="bx bx-home-circle"></i>
+                      <span key="t-dashboard">Dahboard</span>
+                    </a>
+                  </li>
+
+                            
+                  
+                  <li>
+                    <a href="/user/packages" class="waves-effect">
+                      <i class="bx bx-package"></i>
+                      <span key="t-packages">Subscription Plans</span>
+                    </a>
+                  </li>                  
+                  
+                  <li>
+                    <a href="/user/withdrawal" class="waves-effect">
+                      <i class="bx bx-credit-card"></i>
+                      <span key="t-withdrawal">Withdraw Rewards</span>
+                    </a>
+                  </li>                  
+                  
+                  <li>
+                    <a href="/user/wallet" class="waves-effect">
+                      <i class="bx bxs-wallet-alt "></i>
+                      <span key="t-wallet">Wallet</span>
+                    </a>
+                  </li>                  
+                  
+                  <li>
+                    <a href="/user/blog" class="waves-effect">
+                      <i class="bx bx-news"></i>
+                      <span key="t-blog">Sponsored Blog</span>
+                    </a>
+                  </li>                  
+
+                  <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                      <i class="bx bx-history "></i>
+                      <span key="t-history">History/Logs</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="true">
+                      <li><a href="/user/history/mining" key="t-mining">Mining History</a></li>
+                      <li><a href="/user/history/earnings" key="t-earnings">Earnings History</a></li>
+                      <li><a href="/user/history/withdrawal" key="t-withdrawal">Withdrawal History</a></li>
+                      <li><a href="/user/history/referrals" key="t-referral">Referral History</a></li>
+                      
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                      <i class="bx bx-cog"></i>
+                      <span key="t-multi-level">Settings</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="true">
+                      <li><a href="/user/settings/profile" key="t-profile">Profile Settings</a></li>
+                      <li><a href="/user/settings/security" key="t-security">Security Settings</a></li>
+                      
+                    </ul>
+                  </li>
+
+                  <%if(user.is_vendor){%>
+
+                    <li>
+                      <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-key "></i>
+                        <span key="t-vendor">Vendor</span>
+                      </a>
+                      <ul class="sub-menu mm-collapse" aria-expanded="true">
+                        <li><a href="/user/vendor" key="t-vendor">Coupons</a></li>
+                        <li><a href="/user/vendor/coupon" key="t-new">Generate Coupon</a></li>
+                        
+                      </ul>
+                    </li>  
+                  <%}%>     
+                  
+                </ul>
+              </div>
+              <!-- Sidebar -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="simplebar-placeholder" style="width: auto; height: 1450px;"></div>
+    </div>
+    <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+      <div class="simplebar-scrollbar" style="transform: translate3d(0px, 0px, 0px); display: none;"></div>
+    </div>
+    <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+      <div class="simplebar-scrollbar" style="height: 150px; transform: translate3d(0px, 237px, 0px); display: block;">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Left Sidebar End -->

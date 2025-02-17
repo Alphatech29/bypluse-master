@@ -181,3 +181,15 @@
     '    at tryHandleCache (C:\\Users\\hp\\Desktop\\Bypluse-master\\node_modules\\ejs\\lib\\ejs.js:274:36)\n' +
     '    at exports.renderFile [as engine] (C:\\Users\\hp\\Desktop\\Bypluse-master\\node_modules\\ejs\\lib\\ejs.js:491:10)'
 }
+[2025-02-16T10:58:22.348] [DEBUG] default - ✅ Database Connected Successfully!
+[2025-02-16T11:28:39.321] [DEBUG] default - Error: getaddrinfo ENOTFOUND mail.bartanetwork.com
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+  errno: -3008,
+  code: 'EDNS',
+  syscall: 'getaddrinfo',
+  hostname: 'mail.bartanetwork.com',
+  command: 'CONN'
+}
+[2025-02-16T11:31:45.661] [DEBUG] default - ✅ Database Connected Successfully!
+[2025-02-16T11:36:24.485] [DEBUG] default - ✅ Database Connected Successfully!
+[2025-02-16T11:36:40.759] [DEBUG] default - ✅ Database Connected Successfully!

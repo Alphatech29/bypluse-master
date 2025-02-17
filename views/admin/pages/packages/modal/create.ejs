@@ -1,0 +1,86 @@
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <strong class="modal-title" id="exampleModalLabel">Create New Package</strong>
+                <a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </a>
+            </div>
+            <form id="new">
+
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="name">Package Name</label>
+                        <input type="text" class="form-control" id="name">
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="price">Package Price</label>
+                        <input type="text" class="form-control" id="price">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="duration">Mining Duration (Minute)</label>
+                        <input type="text" class="form-control" id="duration">
+                        <small id="duration" class="form-text text-muted">The format must be in minute 60mins = 1hr</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reward">Mining Reward Amount</label>
+                        <input type="text" class="form-control" id="reward" required>
+                        <small id="reward" class="form-text text-muted">Amount they will earn each time they complete a mining block</small>
+                    
+                    </div>
+
+                    <div class="form-group">
+                        <label for="min_withdrawal">Minimum Withdrawal</label>
+                        <input type="text" class="form-control" id="min_withdrawal" required>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label for="max_withdrawal">Maximum Withdrawal</label>
+                        <input type="text" class="form-control" id="max_withdrawal" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vendor">Vendor Coupon Commission</label>
+                        <input type="text" class="form-control" id="vendor" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="auto_mining">Auto Mining</label><br>
+                        <div class="switch-button switch-button-success">
+                            <input type="checkbox" name="auto_mining" id="auto_mining"><span>
+                                <label for="auto_mining"></label></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="visible">Package Visibility</label><br>
+                        <div class="switch-button switch-button-success">
+                            <input type="checkbox" name="switch16" id="visible"><span>
+                                <label for="visible"></label></span>
+                        </div>
+                    </div>
+
+
+                
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" id="button" class="btn btn-primary">Create New</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

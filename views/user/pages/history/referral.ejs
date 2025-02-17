@@ -1,0 +1,61 @@
+<%-include("../../partials/header")%>
+
+<div class="col-12 grid-margin mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Referrals History</h4>
+    
+                <%if(history.length){%>
+                    <div class="table-responsive">
+                        <table id="mytable" class="table">
+                            <thead>
+                                <tr>
+    
+                                    <th> User </th>
+                                    <th> Date </th>
+                                    <th> Status </th>
+    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%history.map((rh,index)=>{%>
+    
+                                    <tr>
+                                        <td>
+                                            <img src="<%=rh.avatar ? rh.avatar:'/img/avatar/avatar.jpg' %>" class="rounded-circle avatar-xs"
+                                                alt="image">
+                                            <%=rh.fullname%>
+                                        </td>
+                                        <td>
+                                            <%=rh.created_at%>
+                                        </td>
+                                        <td>
+                                            <%if(rh.r_status){%>
+                                                <button type="button" class="btn btn-success btn-sm waves-effect waves-light">Verified</button>
+                                                <%}else{%>
+                                                    <button type="button" class="btn btn-danger btn-sm waves-effect waves-light">Unverified</button>
+                                                    <%}%>
+                                        </td>
+    
+                                    </tr>
+    
+                                    <%})%>
+    
+    
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-center">
+                            <%-include("../../partials/pagination");%>
+    
+                        </div>
+                    </div>
+                    <%}else{%>
+                        <h6 class="text-center pt-3">No Referral Stats At The Moment</h6>
+                        <%}%>
+            </div>
+        </div>
+    </div>
+
+
+
+<%-include("../../partials/footer")%>

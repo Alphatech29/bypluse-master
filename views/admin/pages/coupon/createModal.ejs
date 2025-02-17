@@ -1,0 +1,40 @@
+<div id="createModal" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Generate Coupon</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="create-coupon">
+                    <div class="form-group">
+                        <label for="quantity">Quantity (How Many)</label>
+                        <input type="number" class="form-control" id="quantity" aria-describedby="quantity" placeholder="e.g 10"
+                            required>
+                        <small id="quantity" class="form-text text-muted">How Many Coupon You Want To
+                            Generate.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <select class="custom-select custom-select-sm form-control form-control-sm" required id="price">
+                            <option value="">Select Package</option>
+                            <%packages.map(pk =>{%>
+                                <option value="<%=pk.plan_price%>"><%=pk.plan_name%></option>
+                            <%})%>
+                        </select>
+                        
+                        <small id="price" class="form-text text-muted">Amount For Each Coupon.</small>
+                    </div>
+                
+                
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Generate!</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal"> Close </button>
+            </div>
+        </div>
+    </div>
+</div>

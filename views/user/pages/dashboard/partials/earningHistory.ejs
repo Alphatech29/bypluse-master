@@ -1,0 +1,56 @@
+    <div class="col-12 grid-margin mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Last 10 Earnings History</h4>
+
+                <%if(earningHistory.length){%>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                
+                                <th> # </th>
+                                <th> Details </th>
+                                <th> Amount </th>
+                                <th> Date </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%earningHistory.map((eh,index)=>{%>
+
+                            <tr>
+                                <td> <%=index + 1%> </td>
+
+                                <td> <%=eh.h_text%> </td>
+
+                                <td> <span class="text-xs font-weight-bold">
+                                    <%if(eh.is_referral){%>
+                                        <%=websiteDetails. website_currency + eh.h_amount.toLocaleString()%>
+                                    <%}else{%>
+                                        <%=eh.h_amount%> <span>coins</span>
+                                    <%}%>
+                                </span> </td>
+
+                                <td> <%=eh.h_created_at%> </td>
+                                
+                            </tr>
+
+                            <%})%>
+
+                            
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-center">
+                        <a href="/user/history/earnings" class="btn btn-sm bg-gradient-primary mt-4 d-flex">View More</a>
+                    
+                    </div>
+                </div>
+                <%}else{%>
+                <h6 class="text-center pt-3">No Earning Stats At The Moment</h6>
+                <%}%>
+            </div>
+        </div>
+    </div>
+
+

@@ -1,0 +1,74 @@
+<%-include("../../partials/header")%>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card-wrapper">
+      <!-- Form controls -->
+      <div class="card">
+        <!-- Card body -->
+        <div class="card-body">
+          <form class="form" id="generate">
+            <div class="col-md-12">
+              <div class="form-group mt-4">
+                <label for="quantity" class="font-weight-bold">
+                  My Vendor Balance</label
+                >
+
+                <input
+                  value="<%=websiteDetails
+                  .website_currency + user.vendor_balance %>"
+                  type="text"
+                  class="form-control form-control-lg"
+                  disabled readonly
+                />
+              </div>
+            </div>
+            
+            <div class="col-md-12">
+              <div class="form-group mt-4">
+                <label for="quantity" class="font-weight-bold">
+                  How Many?</label
+                >
+
+                <input
+                  id="quantity"
+                  type="number"
+                  class="form-control form-control-lg"
+                  required
+                  placeholder="How Many Coupon You Want To Generate"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group mt-4">
+                <label for="package" class="font-weight-bold">
+                  For Which Package</label
+                >
+
+                <select required="" id="package" class="form-control">
+                  <option selected="" value="">Select Package</option>
+                  <%packages.map(pk =>{%>
+                    <option value="<%=pk.plan_price%>"><%=pk.plan_name%> (<%=(websiteDetails
+                    .website_currency + pk.plan_price)%>)</option>
+                  <%})%>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-12 d-flex justify-content-end">
+              <div class="form-group mt-4">
+                <button type="submit" id="submit" class="btn btn-primary">
+                  Generate Coupon
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/user/js/user/vendor/new.js"></script>
+<%-include("../../partials/footer")%>

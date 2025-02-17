@@ -1,0 +1,39 @@
+<%-include("../../partials/header")%>
+
+
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mb-3 header-title">Password</h4>
+        
+                    <form id="security">
+        
+                        <div class="form-group mt-4">
+                            <label for="current">Current Password</label>
+                            <input required type="text" placeholder="Current Password" class="form-control" id="current">
+                        </div>
+        
+                        <div class="form-group mt-4">
+                            <label for="password">New Password</label>
+                            <input minlength="6" maxlength="20" required type="password" placeholder="New Password" class="form-control" id="password">
+                        </div>
+        
+                        <div class="form-group mt-4">
+                            <label for="password2">Confirm New Password</label>
+                            <input minlength="6" maxlength="20" required placeholder="Confirm New Password" type="password" class="form-control" id="password2">
+                        </div>
+        
+                        
+        
+                        <button id="submit" type="submit" class="btn btn-primary waves-effect waves-light mt-4">Change Password</button>
+                    </form>
+        
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        
+
+
+<script src="/user/js/user/settings/security.js"></script>
+
+<%-include("../../partials/footer")%>

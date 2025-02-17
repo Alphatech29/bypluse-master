@@ -1,0 +1,61 @@
+<%- include('../../partials/header'); %>
+
+
+    <div class="container-fluid dashboard-content">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <h4 class="page-title">
+                        <%=title %>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-12">
+
+
+
+                <div class="card">
+                    <div class="card-body">
+
+
+                        <form id="bonus">
+                            <div class="form-group">
+                                <label for="register">Registration  Bonus (Points)</label>
+                                <input type="number" class="form-control" id="register" aria-describedby="register"
+                                    value="<%=bonus.b_register_bonus %>" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sponsored">Sponsored Post Sharing (Points)</label>
+                                <input type="text" class="form-control" id="sponsored" aria-describedby="sponsored"
+                                    value="<%=bonus.b_share_bonus %>" required>
+                                    
+                            </div>
+                            
+                            
+                            
+
+
+                            <button type="submit" id="submit-btn"
+                                class="btn btn-primary waves-effect waves-light">Save Setting!</button>
+                        </form>
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+
+
+
+
+            </div><!-- end col-->
+        </div>
+    </div>
+
+    <script src="/admin/js/settings/bonuses.js"></script>
+    <%- include('../../partials/footer'); %>
+

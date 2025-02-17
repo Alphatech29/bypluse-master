@@ -1,0 +1,67 @@
+<%-include("../../partials/header")%>
+
+    <div class="col-12 grid-margin mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Withdrawal History</h4>
+    
+                <%if(history.length){%>
+                    <div class="table-responsive">
+                        <table id="mytable" class="table">
+                            <thead>
+                                <tr>
+    
+                                    <th> # </th>
+                                    <th> Amount </th>
+                                    <th> Status </th>
+                                    <th> Date </th>
+    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%history.map((w,index)=>{%>
+    
+                                    <tr>
+                                        <td>
+                                            <%=w.w_trx_id%>
+                                        </td>
+
+                                        <td>
+                                            <span class="text-xs font-weight-bold">
+                                            <%=websiteDetails.website_currency + w.w_amount.toLocaleString()%>
+                                        </span>
+                                        </td>
+                                        <td>
+                                            <%if(w.w_status){%>
+                                                <button type="button" class="btn btn-success btn-sm waves-effect waves-light">Completed</button>
+                                                <%}else{%>
+                                                    <button type="button" class="btn btn-danger btn-sm waves-effect waves-light">Pending</button>
+                                                    <%}%>
+                                        </td>
+
+                                        <td><%=w.w_created_at%></td>
+    
+                                    </tr>
+    
+                                    <%})%>
+    
+    
+                            </tbody>
+                        </table>
+                        
+                        <div class="d-flex justify-content-center">
+                            <%if(history.length){%>
+                                <%-include("../../partials/pagination");%>
+                            <%}%>
+    
+                        </div>
+                    </div>
+                    <%}else{%>
+                        <h6 class="text-center pt-3">No Withdrawal Stats At The Moment</h6>
+                        <%}%>
+            </div>
+        </div>
+    </div>
+
+
+<%-include("../../partials/footer")%>

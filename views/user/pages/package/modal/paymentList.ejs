@@ -1,0 +1,47 @@
+<div class="modal fade payment_list" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Make Payment Using Any Below Gateway</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div data-bs-toggle="modal" data-bs-target=".couponModal" id="paymentBox" class="col-4 couponPay">
+                        <div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Pay Using Coupon Code" class="flex-shrink-0 me-3">
+                            <div class="avatar-md">
+                                <span class="avatar-title rounded-circle bg-danger bg-soft text-danger font-size-22">
+                                    <i class="mdi mdi-gift-outline"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="paymentBox" onclick="comingSoon('fapshi (Africa)')" class="col-4 fapshi">
+                        <div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Pay Using fapshi (Africa)" class="flex-shrink-0 me-3">
+                            <div class="avatar-md">
+                                <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-22">
+                                    <img src="/img/mtn.jpg" alt="">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="cryptoGateway(this)" id="paymentBox" class="col-4 cryptoPay">
+                        <div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Pay Using Crypto" class="flex-shrink-0 me-3">
+                            <div class="avatar-md">
+                                <span class="avatar-title rounded-circle bg-warning bg-soft text-warning font-size-22">
+                                    <i class="mdi mdi-bitcoin"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

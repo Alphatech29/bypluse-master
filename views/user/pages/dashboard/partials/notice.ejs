@@ -1,0 +1,35 @@
+<div class="modal fade" id="notice" tabindex="-1" aria-labelledby="subscribeModalLabel" style="display: none;"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <div class="avatar-md mx-auto mb-4">
+                        <div class="avatar-title bg-light rounded-circle text-primary h1">
+                            <i class="mdi mdi-bell-ring"></i>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10">
+                            <h4 class="text-primary">
+                                <%=notice.notice_title%>
+                            </h4>
+                            <p class="text-muted font-size-14 mb-4">
+                                <%-notice.notice_body%>
+                            </p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button data-bs-dismiss="modal" id="closenotice" type="button" class="btn btn-secondary">Have Read It</button>
+            </div>
+
+        </div>
+    </div>
+</div>

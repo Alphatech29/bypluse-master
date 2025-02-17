@@ -1,0 +1,88 @@
+<%-include("../../partials/header")%>
+
+<div class="row">
+    <div class="col-xl-9 col-lg-8">
+        <div class="card">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-tabs-custom justify-content-center pt-2" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#all-post" role="tab" aria-selected="true">
+                        All Post
+                    </a>
+                </li>
+                
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content p-4">
+                <div class="tab-pane active" id="all-post" role="tabpanel">
+                    <div>
+                        <div class="row justify-content-center">
+                            <div class="col-xl-8">
+                                <div>
+                                    <%if(posts.length){%>
+                                        <%posts.map(pt =>{%>
+                                            <%-include("./partials/blogCard",{pt})%>
+                                        <%})%>
+                                    <%}else{%>
+
+                                    <%}%> 
+
+                                    <div class="text-center">
+                                        <%-include("../../partials/pagination")%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-4">
+        <div class="card">
+            <div class="card-body p-4">
+                <div class="search-box">
+                    <p class="text-muted">Search</p>
+                    <form action="/user/blog" method="get">
+                        <div class="position-relative">
+                            <input name="search" type="text" class="form-control rounded bg-light border-light" placeholder="Search..." required>
+                            <i class="mdi mdi-magnify search-icon"></i>
+                        </div>
+                    </form>
+                </div>
+
+                <hr class="my-4">
+
+                <div>
+                    <p class="text-muted mb-2">Popular Posts</p>
+
+                    <div class="list-group list-group-flush">
+
+                        <%popular.map(pt =>{%>
+                            <a href="/user/blog/<%=pt.post_slug%>" class="list-group-item text-muted py-3 px-2">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 me-3">
+                                    <img src="<%=pt.post_image ? pt.post_image : '/general/img/thumbnail.png'%>" alt=""
+                                        class="avatar-md h-auto d-block rounded popularCard">
+                                </div>
+                                <div class="flex-grow-1 overflow-hidden">
+                                    <h5 class="font-size-13 text-truncate"><%=pt.post_title%></h5>
+                                    <p class="mb-0 text-truncate"><%=pt.post_created_at%></p>
+                                </div>
+                            </div>
+                        </a>
+                        <%})%>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end card -->
+    </div>
+</div>
+
+<%-include("../../partials/footer")%>

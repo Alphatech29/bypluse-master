@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title><%=title%> - <%=websiteDetails.website_tagline%></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="<%=websiteDetails.website_favicon%>">
+
+    <!-- Bootstrap Css -->
+    <link href="/user/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css">
+    <!-- Icons Css -->
+    <link href="/user/css/icons.min.css" rel="stylesheet" type="text/css">
+    <!-- App Css-->
+    <link href="/user/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div class="account-pages my-5 pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mb-5">
+                        
+                        <h4 class="text-uppercase"><%=title%></h4>
+                        <h6><%=text%></h6>
+                        <div class="mt-5 text-center">
+                            <button id="back" class="btn btn-primary waves-effect waves-light">Go Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-xl-6">
+                    <div>
+                        <img src="/user/images/error-img.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+document.querySelector("button#back").addEventListener("click",()=>history.back())
+</script>
+</body>
+
+</html>

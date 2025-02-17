@@ -1,0 +1,123 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Blog | Resthyip</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->		
+    <link rel="shortcut icon" type="image/x-icon" href="/blog/img/logo/favicon.ico">
+
+    <!-- all css here -->
+
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="/blog/css/bootstrap.min.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="/blog/css/owl.carousel.css">
+    <link rel="stylesheet" href="/blog/css/owl.transitions.css">
+   <!-- Animate css -->
+    <link rel="stylesheet" href="/blog/css/animate.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="/blog/css/meanmenu.min.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="/blog/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/blog/css/themify-icons.css">
+    <link rel="stylesheet" href="/blog/css/flaticon.css">
+    <!-- magnific css -->
+    <link rel="stylesheet" href="/blog/css/magnific.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="/blog/style.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="/blog/css/responsive.css">
+
+    <!-- modernizr css -->
+    <script src="/blog/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+    <body>
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    
+    <header class="header-one">
+        <!-- Start top bar -->
+        <div class="topbar-area">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-md-8 col-sm-8 col-xs-12">
+                        <div class="topbar-left">
+                            <ul>
+                                <li><a href="javascript:;"><i class="fa fa-envelope"></i> <%=websiteDetails.website_email%></a></li>
+                                <li><a href="javascript:;"><i class="fa fa-phone"></i> <%=websiteDetails.website_phone_number%></a></li>
+                            </ul>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End top bar -->
+        <!-- header-area start -->
+        <div id="sticker" class="header-area hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="row">
+                            <!-- logo start -->
+                            <div class="col-md-3 col-sm-3">
+                                <div class="logo">
+                                    <!-- Brand -->
+                                    <a class="navbar-brand page-scroll" href="/">
+                                        <img src="<%=websiteDetails.website_logo%>" alt="">
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            <div class="col-md-9 col-sm-9">
+                                
+                                <%if(user){%>
+                                    <div class="header-right-link">
+                                        <!-- search option end -->
+                                        <a class="s-menu" href="<%=user.role ? '/logout?route=admin' : '/logout'%>">Logout</a>
+                                    </div>
+                                    <div class="header-right-link">
+                                        <!-- search option end -->
+                                        <a class="s-menu" href="<%=user.role ? '/admin/dashboard' : '/user/dashboard'%>">Dashboard</a>
+                                    </div>
+                                    
+                                <%}else{%>
+                                    <div class="header-right-link">
+                                        <!-- search option end -->
+                                        <a class="s-menu" href="/login">Login</a>
+                                    </div>
+                                    <div class="header-right-link">
+                                        <!-- search option end -->
+                                        <a class="s-menu" href="/register">Register</a>
+                                    </div>
+                                <%}%>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header-area end -->
+        <!-- mobile-menu-area start -->
+        <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mobile-menu">
+                            <div class="logo">
+                                <a href="/"><img src="<%=websiteDetails.website_logo%>" alt=""></a>
+                            </div>
+                        
+                        </div>					
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile-menu-area end -->		
+    </header>
+    <!-- header end -->

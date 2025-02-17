@@ -1,0 +1,47 @@
+<div class="modal fade" id="edit-<%=gn.g_id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <strong class="modal-title" id="exampleModalLabel">Edit <%=gn.g_name %></strong>
+                <a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </a>
+            </div>
+            <form id="editGeneration">
+
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="name">Generation Name</label>
+                        <input type="text" class="form-control" id="name" value="<%=gn.g_name %>" required>
+                        
+                    
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="percent">Generation Percentage</label>
+                        <input type="number" class="form-control" id="percent" value="<%=gn.g_percent %>" required>
+                        
+                    
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="percent">Generation Plan Subscribe Percentage</label>
+                        <input type="number" class="form-control" id="percent_plan" value="<%=gn.g_plan_percent %>">
+                        
+                    
+                    </div>
+                    
+                    <input hidden type="number" id="id" value="<%=gn.g_id %>">
+                    
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" id="button" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

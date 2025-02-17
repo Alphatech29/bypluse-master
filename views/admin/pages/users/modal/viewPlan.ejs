@@ -1,0 +1,43 @@
+<div id="viewplan-<%=us.uid%>" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><%=us.username%> Subscription Plan Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <%if(us.is_paid){%>
+                <ul class="list-group">
+                
+                    <li class="list-group-item dark-bg">Package Name: <span class="deposit-amount font-weight-bold text-dark">
+                            <%=us.plan_name%>
+                        </span></li>
+                
+                    <li class="list-group-item dark-bg">Mining Reward Amount: <span class="deposit-amount font-weight-bold text-dark">
+                            <%=us.plan_mining_amount%> <%=websiteDetails.website_reward_name%>
+                        </span></li>
+                    
+                    <li class="list-group-item dark-bg">Mining Duration: <span class="deposit-amount font-weight-bold text-dark">
+                            <%=us.plan_mining_minute >= 60 ? (Math.round(us.plan_mining_minute / 60) + ' Hour' ):(us.plan_mining_minute + " Minute")%>
+                        </span></li>
+
+                   
+
+                    
+                
+                </ul>
+                <%}else{%>
+                <h6><%=us.username%> Has No Active Subscription</h6>
+                <%}%>
+
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-dismiss="modal"> Close </button>
+            </div>
+        </div>
+    </div>
+</div>

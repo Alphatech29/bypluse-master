@@ -1,0 +1,102 @@
+<div id="edit-<%=us.uid %>" class="modal fade" tabindex="-1" role="dialog" style="display: none;"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit <%=us.username%>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-user">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" value="<%=us.username%>" required="">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="fullname">Fullname</label>
+                        <input type="text" class="form-control" id="fullname" value="<%=us.fullname%>">
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" value="<%=us.email%>">
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number</label>
+                        <input type="text" class="form-control" id="phone_number" value="<%=us.phone_number%>">
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="activities_balance">Activities Balance</label>
+                        <input type="text" class="form-control" id="activities_balance" value="<%=us.activities_balance%>">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mining_balance">Mining Balance</label>
+                        <input type="text" class="form-control" id="mining_balance" value="<%=us.mining_balance%>">
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="referral_balance">Referral Balance</label>
+                        <input type="text" class="form-control" id="referral_balance" value="<%=us.referral_balance%>">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vendor_balance">Vendor Balance</label>
+                        <input type="text" class="form-control" id="vendor_balance" value="<%=us.vendor_balance%>">
+                    </div>
+
+                    
+                    
+                    
+                    <div class="form-group">
+                        <label for="verify">Verification Status</label>
+                        <select class="form-control" id="verify">
+                            <%if(us.is_verify){%>
+                            <option value="">Account Is Verified</option>
+                            <option value="1">Verified</option>
+                            <option value="0">Unverified</option>
+                            <%}else{%>
+                            <option value="">Account Is Unverified</option>
+                            <option value="0">Unverified</option>
+                            <option value="1">Verified</option>
+                            <%}%>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="is_vendor">Vendor</label>
+                        <select class="form-control" id="is_vendor">
+                            <%if(us.is_vendor){%>
+                            <option value="">User Is A Vendor</option>
+                            <option value="1">Vendor</option>
+                            <option value="0">User</option>
+                            <%}else{%>
+                            <option value="">User Is Not A Vendor</option>
+                            <option value="0">User</option>
+                            <option value="1">Vendor</option>
+                            <%}%>
+                        </select>
+                    </div>
+                    
+                    
+                    <input type="number" hidden="" value="<%=us.uid %>" id="id">
+
+                    <button type="submit" class="btn btn-success"> Save Changes </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

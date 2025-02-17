@@ -1,0 +1,37 @@
+<div class="col-md-4 stretch-card grid-margin">
+    <div class="card bg-gradient-success card-img-holder text-white">
+        <div class="card-body">
+            <img src="/user/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+            <h4 class="font-weight-normal mb-3">Total Earnings <i class="mdi mdi-cash-multiple mdi-24px float-right"></i>
+            </h4>
+            <h2 class="mb-5"><%=websiteDetails.website_currency + balance.total.toLocaleString()%></h2>
+            
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 stretch-card grid-margin">
+    <div class="card bg-gradient-info card-img-holder text-white">
+        <div class="card-body">
+            <img src="/user/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+            <h4 class="font-weight-normal mb-3">Activities Earnings <i
+                    class="mdi mdi-briefcase-check mdi-24px float-right"></i>
+            </h4>
+            <h2 class="mb-5"><%=user.earnings_balance.toLocaleString()%> coins</h2>
+            <h6 class="card-text"><%=websiteDetails.website_per_coin%> Per Coin X <%=user.earnings_balance%> = <%=websiteDetails.website_currency + (websiteDetails.website_per_coin * user.earnings_balance).toLocaleString()%> </h6>
+            
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 stretch-card grid-margin">
+    <div class="card bg-gradient-danger card-img-holder text-white">
+        <div class="card-body">
+            <img src="/user/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+            <h4 class="font-weight-normal mb-3">Referral Earnings <i class="mdi mdi-account-multiple mdi-24px float-right"></i>
+            </h4>
+            <h2 class="mb-5"><%=websiteDetails.website_currency + user.referral_balance.toLocaleString()%></h2>
+            
+        </div>
+    </div>
+</div>

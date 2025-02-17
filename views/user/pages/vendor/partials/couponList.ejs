@@ -1,0 +1,61 @@
+    <div class="col-12 grid-margin mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title" style="justify-content: space-between;display: flex;">My Coupons <%if(coupons.length){%><a href="javascript: void(0);" onclick="deleteAllCoupon(this)" class="btn btn-xs btn-danger ml-1"><i class="fa fa-trash" aria-hidden="true"></i> Delete All Used Code</a><%}%></h4>
+                <%if(coupons.length){%>
+                    
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                
+                                <th> # </th>
+                                <th> Code </th>
+                                <th> Amount </th>
+                                <th> Status </th>
+                                <th> Action </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%coupons.map((cd,index)=>{%>
+
+                            <tr>
+                                <td> <%=index + 1%> </td>
+
+                                <td> <%=cd.c_code%> </td>
+
+                                <td> <%=websiteDetails.website_currency + (cd.c_amount.toLocaleString())%> </td>
+
+                                <td> <%if(cd.c_status){%>
+                                    <button type="button" class="btn btn-danger waves-effect waves-light">Used
+                                    </button>
+                                    <%}else{%>
+                                        <button type="button" class="btn btn-success waves-effect waves-light">Valid
+                                        </button>
+                                    <%}%> </td>
+
+                                <td>
+                                    <a onclick="deleteCoupon('<%=cd.c_id%>',this)" href="javascript: void(0);" class="btn btn-xs btn-danger ml-1"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                </td>
+                                
+                            </tr>
+
+                            <%})%>
+
+                            
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-center">
+                        <%-include("../../../partials/pagination")%>
+                    
+                    </div>
+                </div>
+                <%}else{%>
+                <h6 class="text-center pt-3">No Earning Stats At The Moment</h6>
+                <%}%>
+            </div>
+        </div>
+    </div>
+
+    <script src="/user/js/user/vendor/list.js"></script>

@@ -1,0 +1,36 @@
+<div>
+    <h5><a href="/user/blog/<%=pt.post_slug%>" class="text-dark"><%=pt.post_title%></a>
+    </h5>
+    <p class="text-muted"><%=pt.post_created_at%></p>
+
+    <div class="position-relative mb-3">
+        <img src="<%=pt.post_image ? pt.post_image : '/general/img/thumbnail.png'%>" alt="" class="img-thumbnail blogCard">
+    </div>
+
+    <ul class="list-inline">
+        <li class="list-inline-item me-3">
+            <a href="javascript: void(0);" class="text-muted text-capitalize">
+                <i class="bx bx-user align-middle text-muted me-1"></i>
+                <%=pt.username%>
+            </a>
+        </li>
+        <li class="list-inline-item me-3">
+            <a href="javascript: void(0);" class="text-muted">
+                <i class="bx bx-show align-middle text-muted me-1"></i> <%=pt.post_views%>
+            </a>
+        </li>
+        <li class="list-inline-item me-3">
+            <a href="javascript: void(0);" class="text-muted">
+                <i class="bx bx-dollar align-middle text-muted me-1"></i> <%=pt.post_earnable ? 'Earnable' : 'Not Earnable'%>
+            </a>
+        </li>
+    </ul>
+    <p><%=pt.short_des%>...
+    </p>
+
+    <div>
+        <a href="/user/blog/<%=pt.post_slug%>" class="text-primary">Read more <i class="mdi mdi-arrow-right"></i></a>
+    </div>
+</div>
+
+<hr class="my-5">

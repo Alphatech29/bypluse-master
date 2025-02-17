@@ -1,0 +1,36 @@
+<nav>
+    <ul class="pagination d-flex justify-content-center flex-wrap pagination-primary">
+
+         <%if(prevBtn){%>
+            <li class="page-item"><a class="page-link" href="<%=link%>page=<%=prevBtn%>"><i class="mdi mdi-chevron-left"></i></a></li>
+            <%}else{%>
+            <li class="page-item disabled"><a class="page-link" href="javascript:;">Prev</a></li>
+        <%}%>
+
+        <%let count=1; paginationArr.slice(currentPage - 1).map(p=>{%>
+        
+            <%if(count <=6){%>
+        
+                <%if(currentPage===p){%>
+                    <li class="page-item active"><a class="page-link" href="javascript:;"><%=p%></a></li>
+                    
+                    <%}else{%>
+                        <li class="page-item"><a class="page-link" href="<%=link%>page=<%=p%>"><%=p%></a></li>
+                        
+                <%}%>
+        
+            <%}%>
+        
+                <%count +=1%>
+        
+        <%})%>
+
+        
+        <%if(nextBtn){%>
+            <li class="page-item"><a class="page-link" href="<%=link%>page=<%=nextBtn%>"><i class="mdi mdi-chevron-right"></i></a></li>
+            <%}else{%>
+            <li class="page-item disabled"><a class="page-link" href="javascript:;">Next</a></li>
+        <%}%>
+    </ul>
+</nav>
+

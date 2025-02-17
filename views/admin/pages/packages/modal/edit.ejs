@@ -1,0 +1,115 @@
+<div class="modal fade" id="edit<%=pk.plan_id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <strong class="modal-title" id="exampleModalLabel">Edit <%=pk.plan_name%></strong>
+                <a href="javascript:void(0)" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </a>
+            </div>
+
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+
+                    <form data-id="<%=pk.plan_id%>" id="edit">
+                        <div class="form-group">
+                            <label for="name">Package Name</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="name" value="<%=pk.plan_name%>"
+                                required>
+                    
+                        </div>
+                    
+                    
+                        <div class="form-group">
+                            <label for="price">Package Price</label>
+                            <input type="text" class="form-control" id="price" aria-describedby="price" value="<%=pk.plan_price%>" required>
+                    
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="duration">Mining Duration (Minute)</label>
+                            <input type="number" class="form-control" id="duration" aria-describedby="duration"
+                                value="<%=pk.plan_mining_minute%>" required>
+                            <small id="duration" class="form-text text-muted">The format must be in minute 60mins = 1hr</small>
+                    
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reward">Mining Reward Amount</label>
+                            <input type="text" class="form-control" id="reward" aria-describedby="reward"
+                                value="<%=pk.plan_mining_amount%>" required>
+                            <small id="reward" class="form-text text-muted">Amount they will earn each time they complete a mining block</small>
+                    
+                        </div>
+
+                        <div class="form-group">
+                            <label for="min_withdrawal">Minimum Withdrawal</label>
+                            <input type="text" class="form-control" id="min_withdrawal" value="<%=pk.plan_min_withdrawal%>" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="max_withdrawal">Maximum Withdrawal</label>
+                            <input type="text" class="form-control" id="max_withdrawal" value="<%=pk.plan_max_withdrawal%>" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="vendor">Vendor Coupon Commission</label>
+                            <input type="text" class="form-control" id="vendor" value="<%=pk.plan_vendor_coupon_commission%>" required>
+                        </div>
+
+                        
+                    
+                        <div class="form-group">
+                            <%if(pk.plan_auto_mining===1){%>
+                    
+                                <label for="auto_mining">Auto Mining</label><br>
+                                <div class="switch-button switch-button-success">
+                                    <input type="checkbox" name="switch16" id="auto_mining_<%=pk.plan_id%>" checked=""><span>
+                                        <label for="auto_mining_<%=pk.plan_id%>"></label></span>
+                                </div>
+                    
+                                <%}else{%>
+                    
+                                    <label for="auto_mining">Auto Mining</label><br>
+                                    <div class="switch-button switch-button-success">
+                                        <input type="checkbox" name="switch16" id="auto_mining_<%=pk.plan_id%>"><span>
+                                            <label for="auto_mining_<%=pk.plan_id%>"></label></span>
+                                    </div>
+                    
+                                    <%}%>
+                        </div>
+                        
+                        <div class="form-group">
+                            <%if(pk.plan_status===1){%>
+                    
+                                <label for="visible">Package Visibility</label><br>
+                                <div class="switch-button switch-button-success">
+                                    <input type="checkbox" name="switch16" id="visible_<%=pk.plan_id%>" checked=""><span>
+                                        <label for="visible_<%=pk.plan_id%>"></label></span>
+                                </div>
+                    
+                                <%}else{%>
+                    
+                                    <label for="visible">Package Visibility</label><br>
+                                    <div class="switch-button switch-button-success">
+                                        <input type="checkbox" name="switch16" id="visible_<%=pk.plan_id%>"><span>
+                                            <label for="visible_<%=pk.plan_id%>"></label></span>
+                                    </div>
+                    
+                                    <%}%>
+                        </div>
+
+                        <input type="number" class="form-control" id="id" value="<%=pk.plan_id%>" hidden>
+                    
+                        <br>
+                        <button id="button" type="submit" class="btn btn-primary waves-effect waves-light finish">Save Changes</button>
+                    </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

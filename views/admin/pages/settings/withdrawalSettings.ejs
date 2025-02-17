@@ -1,0 +1,75 @@
+<%- include('../../partials/header'); %>
+
+
+    <div class="container-fluid dashboard-content">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <h4 class="page-title">
+                        <%= title %>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-12">
+
+
+
+                <div class="card">
+                    <div class="card-body">
+
+
+                        <form id="withdrawal">
+                            <div class="form-group">
+                                <label for="visible">Withdrawal Activities Status</label><br>
+                                <div class="switch-button switch-button-success">
+                                    <input <%=websiteDetails.website_act_withdrawal_status && 'checked'%> type="checkbox" name="switch16" id="withactstatus"><span>
+                                        <label for="withactstatus"></label></span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="visible">Withdrawal Referral Status</label><br>
+                                <div class="switch-button switch-button-success">
+                                    <input <%=websiteDetails.website_ref_withdrawal_status && 'checked'%> type="checkbox" name="switch16" id="withrefstatus"><span>
+                                        <label for="withrefstatus"></label></span>
+                                </div>
+                            </div>
+                            <br>
+
+
+                            <br>
+                            
+                            <div class="form-group">
+                                <label for="minwin">Minimum Withdrawal</label>
+                                <input type="text" class="form-control" id="minwin" aria-describedby="minwin" value="<%=websiteDetails.website_min_withdrawal %>" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="maxwin">Maximum Withdrawal</label>
+                                <input type="text" class="form-control" id="maxwin" aria-describedby="maxwin" value="<%=websiteDetails.website_max_withdrawal %>" required>
+                            </div>
+
+                           
+                            <button type="submit" id="submit-btn"
+                                class="btn btn-primary waves-effect waves-light">Save Setting!</button>
+                        </form>
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+
+
+
+
+            </div><!-- end col-->
+        </div>
+    </div>
+
+    <script src="/admin/js/settings/withdrawalSettings.js"></script>
+    <%- include('../../partials/footer'); %>
+

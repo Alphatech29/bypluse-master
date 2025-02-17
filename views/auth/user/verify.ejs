@@ -1,0 +1,58 @@
+<%-include("./partials/header")%>
+                    
+<div class="card overflow-hidden">
+    <div class="bg-primary bg-soft">
+        <div class="row">
+            <div class="col-7">
+                <div class="text-primary p-4">
+                    <h5 class="text-primary">Verify Your Account!</h5>
+                    <p>Please Verify Your Account To Proceed To Next Step.</p>
+                </div>
+            </div>
+            <div class="col-5 align-self-end">
+                <img src="/user/images/profile-img.png" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="card-body pt-0">
+        <div>
+            <a href="/">
+                <div class="avatar-md profile-user-wid mb-4">
+                    <span class="avatar-title rounded-circle bg-light">
+                        <img src="<%=websiteDetails.website_favicon %>" alt="" class="rounded-circle" height="34">
+                    </span>
+                </div>
+            </a>
+        </div>
+        <div class="p-2">
+            <form id="verify" class="needs-validation">
+
+                <p class="card-title-desc">We've Sent A Verification Mail To Your Email, Please Check Your Mail To Verify Your Account. </p>
+
+                <div class="mt-4 d-grid">
+                    <button id="submit" class="btn btn-primary waves-effect waves-light"
+                        type="submit">Resend Verification Mail</button>
+                </div>
+                
+                <div class="col d-flex justify-content-center">
+                    <a href="/logout" class="btn btn-danger waves-effect waves-light mt-3 btn-sm d-inline" type="submit">Logout</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<div class="mt-5 text-center">
+
+    <div>
+        
+        <p>©
+            <script>document.write(new Date().getFullYear())</script> <%=websiteDetails.website_title %>. Designed with <i
+                class="mdi mdi-heart text-danger"></i> by <a href="<%=websiteDetails.website_dev_link %>"><%=websiteDetails.website_dev_name %></a>
+        </p>
+    </div>
+</div>
+
+<script src="/user/js/auth/verify.js"></script>
+<%-include("./partials/footer")%>

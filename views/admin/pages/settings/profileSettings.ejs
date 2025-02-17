@@ -1,0 +1,131 @@
+<%- include('../../partials/header'); %>
+
+
+    <div class="container-fluid dashboard-content">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <h4 class="page-title">
+                        <%= title %>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-12">
+
+
+
+                <div class="row">
+
+                   
+
+
+                    <div class="col-12 col-md-6">
+
+                        <div class="card">
+                            <h5 class="card-header">Profile Settings</h5>
+                            <div class="card-body">
+                        
+                        
+                                <form id="profile">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" id="username" value="<%=user.username%>" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="fullname">Fullname</label>
+                                        <input type="text" class="form-control" id="fullname" value="<%=user.fullname%>" required>
+                                    </div>
+
+                                    
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" value="<%=user.email%>" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="text" class="form-control" id="phone" value="<%=user.phone_number%>" required>
+                                    </div>
+
+                                    
+                                    <button type="submit" id="submit-btn" class="btn btn-primary waves-effect waves-light">Save Setting!</button>
+                                </form>
+                        
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                    
+                        <div class="card">
+                            <h5 class="card-header">Avatar</h5>
+                            <div class="card-body">
+                    
+                    
+                                <form id="avatar">
+                                    <div class="form-group">
+
+                                        <span>
+                                            <img style="width: 100%;padding-bottom: 20px;height: 500px;object-fit: contain;" src="<%=user.avatar ? user.avatar:'/img/avatar/avatar.jpg' %>" alt="">
+                                        </span>
+                                        <input type="file" class="form-control" id="avatar">
+                                    </div>
+                    
+                                    <button type="submit" id="submit-btn" class="btn btn-primary waves-effect waves-light">Change Avatar!</button>
+                                </form>
+                    
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    
+                    
+                    </div>
+
+                    <div class="col-12">
+
+                        <div class="card">
+                            <h5 class="card-header">Security Settings</h5>
+                            <div class="card-body">
+                        
+                        
+                                <form id="password">
+                                    <div class="form-group">
+                                        <label for="password">New Password</label>
+                                        <input type="password" class="form-control" id="password" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="password">Confirm New Password</label>
+                                        <input type="password" class="form-control" id="password2" required>
+                                    </div>
+                        
+                                    <button type="submit" id="submit-btn" class="btn btn-primary waves-effect waves-light">Change
+                                        Password!</button>
+                                </form>
+                        
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+
+
+                    </div>
+
+                    
+
+                </div>
+
+
+
+            </div><!-- end col-->
+        </div>
+    </div>
+
+    <script src="/admin/js/settings/profile.js"></script>
+    <%- include('../../partials/footer'); %>
+

@@ -1,0 +1,229 @@
+<%-include("../partials/header");%>
+
+<div class="dashboard-ecommerce">
+<div class="container-fluid dashboard-content ">
+
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">Admin Dashboard </h2>
+    </div>
+  </div>
+</div>
+
+<!--BASIC STATS-->
+<div class="row">
+  <!-- ============================================================== -->
+  <!-- sales  -->
+  <!-- ============================================================== -->
+  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <div class="card border-3 border-top border-top-primary">
+      <div class="card-body">
+        <h5 class="text-muted">Users</h5>
+        <div class="">
+          <span>Total Users: <strong><%=members%></strong></span><br>
+          <span>Active Members: <strong><%=activeMembers%></strong></span><br>
+          <span>Inactive Members: <strong><%=inactiveMembers%></strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- end sales  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- new customer  -->
+  <!-- ============================================================== -->
+  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <div class="card border-3 border-top border-top-primary">
+      <div class="card-body">
+        <h5 class="text-muted">Paid Withdrawals</h5>
+        <div class="metric-value d-inline-block">
+          <h3 class="mb-1"><%=websiteDetails.website_currency + (paidWithdrawal.toLocaleString())%></h3>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- end new customer  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- visitor  -->
+  <!-- ============================================================== -->
+  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <div class="card border-3 border-top border-top-primary">
+      <div class="card-body">
+        <h5 class="text-muted">Unpaid Withdrawals</h5>
+        <div class="metric-value d-inline-block">
+          <h3 class="mb-1"><%=websiteDetails.website_currency  + (pendingWithdrawal.toLocaleString())%></h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- end visitor  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- total orders  -->
+  <!-- ============================================================== -->
+  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <div class="card border-3 border-top border-top-primary">
+      <div class="card-body">
+        <h5 class="text-muted">Live Miners</h5>
+        <div class="metric-value d-inline-block">
+          <h3 class="mb-1"><%=liveMiners%></h3>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- end total orders  -->
+  <!-- ============================================================== -->
+</div>
+<!--BASIC STATS-->
+
+<!--TOP INVESTORS & REFERRER-->
+<div class="row">
+
+  <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="card">
+      <h5 class="card-header">Top 10 Earners</h5>
+
+      <div class="card-body p-0">
+        <%if(topEarners.length> 0){ %>
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="bg-light">
+                <tr class="border-0">
+
+                  <th class="border-0">#</th>
+                  <th class="border-0">Avatar</th>
+                  <th class="border-0">User</th>
+                  <th class="border-0">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%topEarners.map((us,index)=>{ %>
+                  <tr>
+
+
+
+                    <td>
+                      <%=index + 1 %>
+                    </td>
+
+                    <td>
+                      <div class="m-r-10"><img src="<%=us.avatar ? us.avatar:'/img/avatar/avatar.jpg' %>" alt="user"
+                          style="border-radius: 50%;width: 40px;height: 40px;"></div>
+                    </td>
+
+                    <td style="text-transform: capitalize;">
+                      <%=us.fullname %> (<%=us.username%>)
+                    </td>
+
+                    <td>
+                      <%=websiteDetails.website_currency%><%=(((us.activities_balance + us.mining_balance) * websiteDetails.website_per_coin) + us.referral_balance).toLocaleString()%>
+                    </td>
+
+                  </tr>
+
+
+                  <% }) %>
+
+                    <tr>
+                      <td colspan="9"></td>
+                    </tr>
+              </tbody>
+
+            </table>
+
+
+          </div>
+          <% }else{%>
+            <h3 class="text-center pt-3">No Data At The Moment</h3>
+            <%}%>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="card">
+      <h5 class="card-header">Top 10 Referrer</h5>
+
+      <div class="card-body p-0">
+        <%if(topReferrer.length> 0){ %>
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="bg-light">
+                <tr class="border-0">
+
+                  <th class="border-0">#</th>
+                  <th class="border-0">Avatar</th>
+                  <th class="border-0">User</th>
+                  <th class="border-0">Referral</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%topReferrer.map((us,index)=>{ %>
+                  <tr>
+
+
+
+                    <td>
+                      <%=index + 1 %>
+                    </td>
+
+                    <td>
+                      <div class="m-r-10"><img src="<%=us.avatar ? us.avatar:'/img/avatar/avatar.jpg' %>" alt="user"
+                          style="border-radius: 50%;width: 40px;height: 40px;"></div>
+                    </td>
+
+                    <td style="text-transform: capitalize;">
+                      <%=us.fullname %> (<%=us.username%>)
+                    </td>
+
+                    <td>
+                      <%=us.total%>
+                    </td>
+
+                  </tr>
+
+
+                  <% }) %>
+
+                    <tr>
+                      <td colspan="9"></td>
+                    </tr>
+              </tbody>
+
+            </table>
+
+
+          </div>
+          <% }else{%>
+            <h3 class="text-center pt-3">No Referral At The Moment</h3>
+            <%}%>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+<!--TOP INVESTORS & REFERRER-->
+
+
+
+
+
+
+
+<!--END-->
+</div>
+</div>
+<%-include("../partials/footer");%>

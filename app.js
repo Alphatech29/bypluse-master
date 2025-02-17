@@ -52,11 +52,6 @@ app.use("*", notFoundRoute);
 // Error Middleware
 app.use(errorMiddleWare);
 
-// Start Server
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-});
 
 // Error Handling
 process.on('uncaughtException', (err) => {
@@ -65,4 +60,10 @@ process.on('uncaughtException', (err) => {
 
 process.on('unhandledRejection', (reason, promise) => {
     console.error("Unhandled Rejection:", reason);
+});
+
+// Start Server
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
 });

@@ -1,0 +1,25 @@
+<%-include("./partials/header")%>
+
+
+    <div class="splash-container">
+        <div class="card ">
+            <div class="card-header text-center"><a href="/"><img class="logo-img"
+                        src="<%=websiteDetails.website_logo %>" alt="logo" style="height: 35px;width: 100%;object-fit: contain;"></a><span class="splash-description">Admin Reset Password.</span></div>
+            <div class="card-body">
+                <form id="reset">
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="credentials" type="text" placeholder="Username Or Email"
+                            required="">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Reset Password</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script src="/admin/js/auth/forgot.js"></script>
+
+  <%-include("./partials/footer")%>

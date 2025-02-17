@@ -1,0 +1,118 @@
+</div>
+<!-- container-fluid -->
+</div>
+<!-- End Page-content -->
+
+
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <script>
+                    document.write(new Date().getFullYear())
+                </script> ©
+                <%=websiteDetails.website_title%>.
+            </div>
+            <div class="col-sm-6">
+                <div class="text-sm-end d-none d-sm-block">
+                    Design &amp; Develop by
+                    <a href="<%=websiteDetails.website_dev_link%>">
+                        <%=websiteDetails.website_dev_name%>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<!-- end main content-->
+
+</div>
+<!-- END layout-wrapper -->
+
+<!-- Right Sidebar -->
+<div class="right-bar">
+    <div data-simplebar="init" class="h-100">
+        <div class="simplebar-wrapper" style="margin: 0px;">
+            <div class="simplebar-height-auto-observer-wrapper">
+                <div class="simplebar-height-auto-observer"></div>
+            </div>
+            <div class="simplebar-mask">
+                <div class="simplebar-offset" style="right: -17px; bottom: 0px;">
+                    <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;">
+                        <div class="simplebar-content" style="padding: 0px;">
+                            <div class="rightbar-title d-flex align-items-center px-3 py-4">
+
+                                <h5 class="m-0 me-2">Settings</h5>
+
+                                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                                    <i class="mdi mdi-close noti-icon"></i>
+                                </a>
+                            </div>
+
+                            <!-- Settings -->
+                            <hr class="mt-0">
+                            <h6 class="text-center mb-0">Choose UI Layouts</h6>
+
+                            <div class="p-4">
+                                <div class="mb-2">
+                                    <img src="/user/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
+                                </div>
+
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" <%=mode==="light-mode-switch" && 'checked' %>>
+                                    <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                                </div>
+
+                                <div class="mb-2">
+                                    <img src="/user/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch" <%=mode==="dark-mode-switch" && 'checked' %>>
+                                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="simplebar-placeholder" style="width: auto; height: 1065px;"></div>
+        </div>
+        <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+            <div class="simplebar-scrollbar" style="transform: translate3d(0px, 0px, 0px); display: none;"></div>
+        </div>
+        <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+            <div class="simplebar-scrollbar" style="height: 270px; transform: translate3d(0px, 0px, 0px); display: block;">
+            </div>
+        </div>
+    </div>
+    <!-- end slimscroll-menu-->
+</div>
+<!-- /Right-bar -->
+
+
+
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>
+
+
+<!-- JAVASCRIPT -->
+<script src="/user/libs/jquery/jquery.min.js"></script>
+<script src="/user/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/user/libs/metismenu/metisMenu.min.js"></script>
+<script src="/user/libs/simplebar/simplebar.min.js"></script>
+<script src="/user/libs/node-waves/waves.min.js"></script>
+
+<script src="/user/js/fetcher.js"></script>
+<script src="/user/js/app.js"></script>
+<script src="/user/js/lib/cute-alert.js"></script>
+<%-websiteDetails.website_footer_code%>
+
+    </body>
+
+    </html>

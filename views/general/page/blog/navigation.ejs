@@ -1,0 +1,34 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="blog-pagination">
+        <ul class="pagination">
+            <%if(prevBtn){%>
+                <li><a href="<%=link%>page=<%=prevBtn%>">Prev</a></li>
+            <%}%>
+           
+            <%let count=1; paginationArr.slice(currentPage - 1).map(p=>{%>
+        
+                <%if(count <=6){%>
+            
+                    <%if(currentPage===p){%>
+                        <li class="active"><a href="javascript:;"><%=p%></a></li>
+                        
+                        <%}else{%>
+                            <li><a href="<%=link%>page=<%=p%>"><%=p%></a></li>
+      
+                    <%}%>
+            
+                <%}%>
+            
+                    <%count +=1%>
+            
+            <%})%>
+
+           
+           <%if(nextBtn){%>
+            <li><a href="<%=link%>page=<%=nextBtn%>">Next</a></li>
+            <%}%>
+        </ul>
+    </div>	
+</div>
+
+
