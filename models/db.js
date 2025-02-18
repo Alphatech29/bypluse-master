@@ -3,11 +3,11 @@ const logger = require("../helpers/logger");
 
 const db = mysql.createPool({
     connectionLimit: 10,
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    port: 3307,
-    database: 'bypluse',
+    host: '162.55.231.180',
+    user: 'byplusec_bypluse',
+    password: '@bypluse',
+    port: 3306,
+    database: 'byplusec_bypluse',
     charset: "utf8mb4",
     connectTimeout: 20000
 });
