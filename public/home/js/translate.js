@@ -1,48 +1,66 @@
-const API_URL = "https://api.mymemory.translated.net/get"; // Free translation API
+const API_URL = "https://lingvanex.com/translate"; // Alternative Free Translation API
 
-// Function to change language dynamically
-async function changeLanguage(lang) {
-    // Update the language in the dropdown button text
-    document.getElementById("selectedLanguage").innerText = lang === 'en' ? 'English' : 'Français';
+document.addEventListener("DOMContentLoaded", function () {
+    async function changeLanguage(lang) {
+        const languageElement = document.getElementById("selectedLanguage");
 
-    // Get all elements in the body
-    const elements = document.body.getElementsByTagName("*");
-    let textNodes = [];
+        if (!languageElement) {
+            console.error("Element with ID 'selectedLanguage' not found.");
+            return;
+        }
 
-    // Extract all text nodes
-    for (const element of elements) {
-        for (const node of element.childNodes) {
-            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== "") {
-                textNodes.push(node);
+        languageElement.innerText = lang === "en" ? "English" : "Français";
+
+        const elements = document.body.getElementsByTagName("*");
+        let textNodes = [];
+
+        for (const element of elements) {
+            for (const node of element.childNodes) {
+                if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== "") {
+                    textNodes.push(node);
+                }
             }
+        }
+
+        const originalTexts = textNodes.map(node => node.nodeValue.trim());
+
+        if (originalTexts.length === 0) {
+            console.warn("No translatable text found.");
+            return;
+        }
+
+        try {
+            const translatedTexts = await Promise.all(originalTexts.map(async text => {
+                try {
+                    const response = await fetch(`${API_URL}`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            q: text,
+                            source: "en",
+                            target: lang,
+                            format: "text"
+                        })
+                    });
+                    const data = await response.json();
+                    return data.translatedText || text;
+                } catch (error) {
+                    console.error("API Request failed:", error);
+                    return text;
+                }
+            }));
+
+            textNodes.forEach((node, i) => node.nodeValue = translatedTexts[i]);
+        } catch (error) {
+            console.error("Translation error:", error);
         }
     }
 
-    // Collect all text to be translated
-    const originalTexts = textNodes.map(node => node.nodeValue.trim());
-
-    try {
-        const translatedTexts = await Promise.all(originalTexts.map(async text => {
-            try {
-                const response = await fetch(`${API_URL}?q=${encodeURIComponent(text)}&langpair=en|${lang}`);
-                const data = await response.json();
-
-                // If API has translated text, return it. Otherwise, return original text
-                if (data.responseData) {
-                    return data.responseData.translatedText || text;
-                } else {
-                    console.error("Translation failed for:", text);
-                    return text;
-                }
-            } catch (error) {
-                console.error("API Request failed:", error);
-                return text; // Fallback to the original text in case of error
-            }
-        }));
-
-        // Replace text content with translated content
-        textNodes.forEach((node, i) => node.nodeValue = translatedTexts[i]);
-    } catch (error) {
-        console.error("Translation error:", error);
-    }
-}
+    // Attach event listeners to dropdown items
+    document.querySelectorAll(".dropdown-item").forEach(item => {
+        item.addEventListener("click", function () {
+            const lang = this.getAttribute("onclick").match(/'([^']+)'/)[1];
+            changeLanguage(lang);
+        });
+    });
+});
