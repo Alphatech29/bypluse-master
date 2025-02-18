@@ -6,7 +6,6 @@ const db = mysql.createPool({
     host: 'bypluse.com',
     user: 'byplusec_bypluse',
     password: '@bypluse',
-    port: 3306,
     database: 'byplusec_bypluse',
     charset: "utf8mb4",
     connectTimeout: 20000
