@@ -14,3 +14,60 @@
 [2025-02-18T08:08:56.840] [DEBUG] default - ✅ Database Connected Successfully!
 [2025-02-18T08:10:30.965] [DEBUG] default - ✅ Database Connected Successfully!
 [2025-02-18T08:15:51.983] [DEBUG] default - ✅ Database Connected Successfully!
+[2025-02-19T09:05:57.469] [DEBUG] default - ❌ Database Connection Error: AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1118:18)
+    at afterConnectMultiple (node:net:1685:7)
+    --------------------
+    at Protocol._enqueue (C:\Users\hp\Desktop\Bypluse-global\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\hp\Desktop\Bypluse-global\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\hp\Desktop\Bypluse-global\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\hp\Desktop\Bypluse-global\node_modules\mysql\lib\Pool.js:48:16)
+    at Object.<anonymous> (C:\Users\hp\Desktop\Bypluse-global\models\db.js:28:4)
+    at Module._compile (node:internal/modules/cjs/loader:1469:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+    at Module.load (node:internal/modules/cjs/loader:1288:32)
+    at Module._load (node:internal/modules/cjs/loader:1104:12)
+    at Module.require (node:internal/modules/cjs/loader:1311:19) {
+  code: 'ECONNREFUSED',
+  fatal: true,
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3306
+        at createConnectionError (node:net:1648:14)
+        at afterConnectMultiple (node:net:1678:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3306
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3306
+        at createConnectionError (node:net:1648:14)
+        at afterConnectMultiple (node:net:1678:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3306
+    }
+  ]
+}
+[2025-02-19T09:06:27.390] [DEBUG] default - ✅ Database Connected Successfully! [DEVELOPMENT]
+[2025-02-19T09:07:00.951] [DEBUG] default - ✅ Database Connected Successfully! DEVELOPMENT
+[2025-02-19T09:12:35.080] [DEBUG] default - [Error: ENOENT: no such file or directory, unlink 'C:\Users\hp\Desktop\Bypluse-global\publicundefined'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'unlink',
+  path: 'C:\\Users\\hp\\Desktop\\Bypluse-global\\publicundefined'
+}
+[2025-02-19T09:13:07.189] [DEBUG] default - [Error: ENOENT: no such file or directory, unlink 'C:\Users\hp\Desktop\Bypluse-global\publicundefined'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'unlink',
+  path: 'C:\\Users\\hp\\Desktop\\Bypluse-global\\publicundefined'
+}
+[2025-02-19T09:13:07.242] [DEBUG] default - [Error: ENOENT: no such file or directory, unlink 'C:\Users\hp\Desktop\Bypluse-global\publicundefined'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'unlink',
+  path: 'C:\\Users\\hp\\Desktop\\Bypluse-global\\publicundefined'
+}

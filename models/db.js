@@ -1,12 +1,27 @@
 const mysql = require("mysql");
 const logger = require("../helpers/logger");
 
+const env = process.env.NODE_ENV || "development"; 
+
+const dbConfig = {
+    production: {
+        host: "panel909.harmondns.net",
+        user: "byplusec_bypluse",
+        password: "%jAJ!ns5jS1V",
+        database: "byplusec_bypluse"
+    },
+    development: {
+        host: "localhost",
+        user: "root",
+        password: "",
+        port:3307,
+        database: "bypluse"
+    }
+};
+
 const db = mysql.createPool({
     connectionLimit: 10,
-    host: 'panel909.harmondns.net',
-    user: 'byplusec_bypluse',
-    password: '%jAJ!ns5jS1V',
-    database: 'byplusec_bypluse',
+    ...dbConfig[env], 
     charset: "utf8mb4",
     connectTimeout: 40000
 });
@@ -18,8 +33,8 @@ db.getConnection((err, connection) => {
         return;
     }
 
-    console.log("✅ Database Connected Successfully!");
-    logger.debug("✅ Database Connected Successfully!");
+    console.log(`✅ Database Connected Successfully! ${env.toUpperCase()}`);
+    logger.debug(`✅ Database Connected Successfully! ${env.toUpperCase()}`);
 
     connection.release();
 });
