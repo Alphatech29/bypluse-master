@@ -1,14 +1,16 @@
-const nodemailer = require("nodemailer")
+const nodemailer = require("nodemailer");
+
 const transporter = nodemailer.createTransport({
-    host: 'mail.bypluse.com',
+    host: 'smtp.gmail.com', 
     port: 465,
+    secure: true,
     auth: {
-        user: 'support@bypluse.com',
-        pass: '@123456'
+        user: 'byplusetechnology@gmail.com' , 
+        pass: 'Iphonexr12'
     },
     tls: {
         rejectUnauthorized: false
     },
 });
 
-module.exports = transporter
+module.exports = transporter;
